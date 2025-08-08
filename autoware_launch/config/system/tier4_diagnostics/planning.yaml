@@ -262,7 +262,7 @@ units:
     timeout: 1.0
 
   - path: /planning/020-boundary_departure
-    type: ok
+    type: diag
     node: motion_velocity_planner
     name: boundary_departure
     timeout: 1.0
