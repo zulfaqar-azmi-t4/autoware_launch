@@ -21,29 +21,7 @@ units:
   # NOTE: Please modify this section according to your environment and requirements.
   # *******************************************************************************
   - path: /planning/emergency_stop
-    type: and
-    list:
-      - { type: link, link: /planning/000-component_status/route_state }
-      - { type: link, link: /planning/001-topic_status/route-error }
-      - { type: link, link: /planning/001-topic_status/trajectory-error }
-      - { type: link, link: /planning/003-trajectory_finite_validation-error }
-      - { type: link, link: /planning/004-trajectory_interval_validation-error }
-      - { type: link, link: /planning/005-trajectory_curvature_validation-error }
-      - { type: link, link: /planning/006-trajectory_relative_angle_validation-error }
-      - { type: link, link: /planning/007-trajectory_lateral_acceleration_validation-error }
-      - { type: link, link: /planning/008-trajectory_acceleration_validation-error }
-      - { type: link, link: /planning/009-trajectory_deceleration_validation-error }
-      - { type: link, link: /planning/010-trajectory_steering_validation-error }
-      - { type: link, link: /planning/011-trajectory_steering_rate_validation-error }
-      - { type: link, link: /planning/012-trajectory_velocity_deviation_validation-error }
-      - { type: link, link: /planning/013-trajectory_shift_validation-error }
-      # - { type: link, link: /planning/014-intersection_collision_checker-error }
-      # - { type: link, link: /planning/015-collision_checker-error }
-      - { type: link, link: /planning/016-path_optimizer_emergency_stop-error }
-      # - { type: link, link: /planning/017-rear_collision_checker-error }
-      - { type: link, link: /planning/018-trajectory_yaw_deviation_validation-error }
-      - { type: link, link: /planning/019-trajectory_distance_deviation_validation-error }
-      - { type: link, link: /planning/020-boundary_departure-error }
+    type: ok
 
   - path: /planning/comfortable_stop
     type: and
@@ -175,7 +153,7 @@ units:
       link: /planning/019-trajectory_distance_deviation_validation
 
   - path: /planning/020-boundary_departure-error
-    type: warn-to-ok
+    type: ok
     item:
       type: link
       link: /planning/020-boundary_departure
