@@ -9,7 +9,6 @@
       - "autoware::trajectory_optimizer::plugin::TrajectoryVelocityOptimizer"
       - "autoware::trajectory_optimizer::plugin::TrajectoryEBSmootherOptimizer"
       - "autoware::trajectory_optimizer::plugin::TrajectorySplineSmoother"
-      - "autoware::trajectory_optimizer::plugin::TrajectoryMPTOptimizer"
       - "autoware::trajectory_optimizer::plugin::TrajectoryExtender"
 
     # Plugin activation flags - control runtime enable/disable

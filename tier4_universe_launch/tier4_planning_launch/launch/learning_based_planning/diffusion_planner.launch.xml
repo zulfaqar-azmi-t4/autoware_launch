@@ -57,7 +57,7 @@
       <include file="$(find-pkg-share autoware_trajectory_optimizer)/launch/trajectory_optimizer.launch.xml">
         <arg name="trajectory_optimizer_param_path" value="$(var trajectory_optimizer_param_path)"/>
         <arg name="input_trajectories" value="/planning/generator/diffusion_planner/modified_candidate_trajectories"/>
-        <arg name="output_traj" value="/planning/trajectory_generator/trajectory"/>
+        <arg name="output_traj" value="/planning/trajectory"/>
         <arg name="output_trajectories" value="/planning/generator/candidate_trajectories"/>
         <arg name="jerk_filtered_smoother_param_path" value="$(var jerk_filtered_smoother_param_path)"/>
         <arg name="velocity_smoother_param_path" value="$(var velocity_smoother_param_path)"/>
@@ -76,6 +76,16 @@
   </group>
   <group>
     <push-ros-namespace namespace="trajectory_selector"/>
-    <!-- TODO: Select a trajectory from candidate trajectories and publish it to planning_validator -->
+        <include file="$(find-pkg-share autoware_trajectory_selector)/launch/trajectory_selector.launch.xml">
+          <!-- <arg name="input_trajectories" value="/planning/generator/candidate_trajectories"/> -->
+          <arg name="input_generative_trajectories" value="/planning/generator/candidate_trajectories"/>
+          <arg name="input_backup_trajectories" value="/planning/generator/trajectory/candidate_trajectories"/>
+          <arg name="output_trajectories" value="/planning/trajectory_selector/validator/candidate_trajectories"/>
+          <arg name="input_vector_map" value="/map/vector_map"/>
+          <arg name="input_odometry" value="/localization/kinematic_state"/>
+          <arg name="input_objects" value="/perception/object_recognition/objects"/>
+          <arg name="input_acceleration" value="/localization/acceleration"/>
+          <arg name="input_traffic_signals" value="/perception/traffic_light_recognition/traffic_signals"/>
+        </include>
   </group>
 </launch>
