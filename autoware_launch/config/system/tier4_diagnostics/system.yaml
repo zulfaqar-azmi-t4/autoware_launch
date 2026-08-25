@@ -254,7 +254,7 @@ units:
       - { type: link, link: /system/clock-sensor@rear_lower/lidar-error }
       - { type: link, link: /system/clock-sensor@left_lower/lidar-error }
       - { type: link, link: /system/clock-sensor@front_center/radar_link-error }
-      - { type: link, link: /system/clock-sensor@rear_center/radar_link-error }
+      # - { type: link, link: /system/clock-sensor@rear_center/radar_link-error }
       - { type: link, link: /system/clock-sub_sys-error }
       - { type: link, link: /system/clock-sensor@front_upper/lidar-error }
       - { type: link, link: /system/clock-sensor@right_upper/lidar-error }
@@ -262,7 +262,7 @@ units:
       - { type: link, link: /system/clock-sensor@right_lower/lidar-error }
       - { type: link, link: /system/clock-perception1_sys-error }
       - { type: link, link: /system/clock-perception2_sys-error }
-      - { type: link, link: /system/clock-addon_sys-error }
+      # - { type: link, link: /system/clock-addon_sys-error }
       - { type: link, link: /system/clock-logging_sys-error }
 
   - path: /system/clock-main_sys-error
