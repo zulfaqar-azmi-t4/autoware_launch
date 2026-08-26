@@ -54,6 +54,7 @@ units:
       # - { type: link, link: /control/004-over_velocity-error }
       - { type: link, link: /control/009-slip_detection-error }
       - { type: link, link: /control/control_command_gate/timeout_main-error }
+      - { type: link, link: /control/020-uncrossable-bound_departure-error }
 
   - path: /control/comfortable_stop
     type: and
@@ -168,6 +169,12 @@ units:
       type: link
       link: /control/016-sudden_deceleration_monitor
 
+  - path: /control/020-uncrossable-bound_departure-error
+    type: warn-to-ok
+    item:
+      type: link
+      link: /control/020-uncrossable-bound_departure
+
   - path: /control/002-topic_status/control_command
     type: diag
     node: topic_state_monitor_control_command_control_cmd
@@ -272,9 +279,16 @@ units:
     name: timeout_output
     timeout: 3.0
     # latch: 0.0
+
   - path: /control/016-sudden_deceleration_monitor
     type: diag
     node: sudden_deceleration_monitor
     name: sudden_deceleration_monitor
     timeout: 3.0
     # latch: 0.0
+
+  - path: /control/020-uncrossable-bound_departure
+    type: diag
+    node: control_validator
+    name: control_validation_uncrossable_bound_departure
+    timeout: 3.0
