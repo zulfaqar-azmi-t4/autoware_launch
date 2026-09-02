@@ -23,7 +23,7 @@
   <arg name="trajectory_velocity_optimizer_param_path"/>
   <arg name="trajectory_kinematic_feasibility_enforcer_param_path"/>
   <arg name="trajectory_mpt_optimizer_param_path"/>
-  <arg name="mppi_optimizer_param_path" default="$(find-pkg-share autoware_mppi_optimizer)/config/mppi_optimizer.param.yaml"/>
+  <arg name="mppi_optimizer_param_path" default="$(find-pkg-share autoware_launch)/config/planning/neural_net_planner/mppi_optimizer.param.yaml"/>
   <arg name="trajectory_processor_max_velocity_mps" default="11.11"/>
 
   <!-- mission planner -->
